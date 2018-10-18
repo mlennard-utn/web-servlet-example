@@ -31,6 +31,7 @@ public class ServletPost extends HttpServlet {
 			  .append("			<form action=\"welcome\" method=\"POST\">\r\n")
 			  .append("				Ingrese su nombre: \r\n")
 			  .append("				<input type=\"text\" name=\"user\" />\r\n")
+			  .append("				<input type=\"text\" name=\"otrocampo\" />\r\n")
 			  .append("				<input type=\"submit\" value=\"Submit\" />\r\n")
 			  .append("			</form>\r\n")
 			  .append("		</body>\r\n")

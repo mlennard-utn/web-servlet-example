@@ -30,6 +30,7 @@ public class ServletCookies extends HttpServlet {
 		if(user.equals(userID) && pwd.equals(password)){
 			Cookie loginCookie = new Cookie("nuestraCookie",user);
 			HttpSession session = request.getSession(true);
+			
 			loginCookie.setValue(URLEncoder.encode(user, "UTF-8"));
 			session.setAttribute(Constantes.SESSION_USER_NAME, user);
 			//setting cookie to expiry in 30 mins

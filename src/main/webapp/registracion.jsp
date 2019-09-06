@@ -10,13 +10,13 @@
 	<h2> REGISTRACION </h2>
 	<form method="post" action="registracion">
 		<label for="name"> Nombre </label>
-		<input type="text" name="name" >
+		<input type="text" name="name" required="required">
 		<br>
 		<label for="lastName"> Apellido</label>
-		<input type="text" name="lastName" >
+		<input type="text" name="lastName" required="required">
 		<br>
 		<label for="email"> E-mail</label>
-		<input type="email" name="email" >
+		<input type="email" name="email" required="required">
 		<br>
 		<input type="submit" value="Registrarse" >
 		

@@ -9,7 +9,6 @@ public class RegistrationService {
 		String firstLetterEmail = Character.toString(reg.getEmail().charAt(0));
 		String firstLetterName = Character.toString(reg.getFirstName().charAt(0));
 
-		// Validacion de nombre y apellido
 		if (firstLetterEmail.equalsIgnoreCase(firstLetterName)) {
 			return reg.getEmail().toLowerCase().contains(reg.getLastName().toLowerCase());
 		} else {
@@ -18,7 +17,7 @@ public class RegistrationService {
 
 	}
 
-	public boolean isValidRegistration2(Registration reg) {
+	public boolean isValidRegistrationDomain(Registration reg) {
 		return reg.getEmail().endsWith("gmail.com") || reg.getEmail().endsWith("hotmail.com")
 				|| reg.getEmail().endsWith("yahoo.com");
 

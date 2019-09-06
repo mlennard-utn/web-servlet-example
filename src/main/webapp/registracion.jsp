@@ -1,3 +1,4 @@
+<%@page import="java.util.Collection"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -18,8 +19,41 @@
 		<label for="email"> E-mail</label>
 		<input type="email" name="email" required="required">
 		<br>
-		<input type="submit" value="Registrarse" >
+		<input type="submit" value="Registrarse" ><br><br>
 		
 	</form>
+	
+	<% 	String resultado = (String) request.getAttribute("resultado");
+		if (resultado != null ) {
+			if ("OK".equalsIgnoreCase(resultado)) {
+	%>
+		<h1>FELICITACIONES, REGISTRACION VALIDA</h1>	
+	<% 	} else {
+			Collection<String> errores = (Collection<String>) request.getAttribute("errores");
+			String email = request.getParameter("email");
+			String lastName = request.getParameter("lastName");
+			String firstName = request.getParameter("name");
+			
+			// Incluir el formulario para mostrar el contenido de los campos
+			
+	%>
+		<H2 style="color: brown"> HUBO UN ERROR EN LA REGISTRACION: </H2>
+		<ul style="color : red">
+	<% 		
+		if (errores != null ){	
+			for(String error: errores){
+	%>
+				<li> <%= error %> </li> 
+	<% 			
+			} 
+		}
+	%>
+		</ul>
+	<%	
+			}	
+		}
+	%>
+	
+	
 </body>
 </html>
